@@ -2,7 +2,7 @@
 Introduction to Artificial Intelligence, University of Colorado Boulder
 
 
-The program receives as a parameter the map and the heuristic (mas for Manhattan, short for Diagonal Shortcut).
+The program receives as a parameter the map and the heuristic (man for Manhattan, short for Diagonal Shortcut).
 To run the program: 
     Manhattan: python Assignment2.py World1.txt man
     Diagonal Shortcut: python Assignment2.py World1.txt short
@@ -19,7 +19,8 @@ Each node has:
   -Value of h (heuristic)
   -Value of f
   -Value of g
-  -Terrain
+   -Terrain: 0 if the value of the location is 0, 10 for mountains, and 10000 for walls.
+   As long as the penalization for walls is bigger than the number of squares*10, the code works.
   -Parent: for visited nodes used to know the solution path    
   
 After creating the list (maze), the program sets the adjacents of each node. It creates two python lists: close[]
@@ -43,6 +44,7 @@ This method balances H with G. I used this method because it is balanced, it is 
 Comparing heuristics:
 
 --------------------MAP1--------------------
+
 ----------MANHATTAN---------
 COST OF THE PATH:  130
 LOCATIONS EVALUATED: 76
@@ -81,6 +83,7 @@ SOLUTION PATH (POSITIONS IN MAP):
 
 
 --------------------MAP2--------------------
+
 ----------MANHATTAN---------
 COST OF THE PATH:  142
 LOCATIONS EVALUATED: 77
